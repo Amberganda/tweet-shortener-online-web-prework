@@ -16,8 +16,9 @@ end
 def word_substituter(string)
     words_array = string.split(" ")
     words_array = words_array.collect do |word|
-        if dictionary.keys.include?(word)
-            dictionary[word]
+        lowercased_word = word.downcase
+        if dictionary.keys.include?(lowercased_word)
+            dictionary[lowercased_word]
         else
             word
         end
